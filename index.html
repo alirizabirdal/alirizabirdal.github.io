@@ -96,6 +96,16 @@ a{color:inherit;text-decoration:none}
   border-bottom:1px solid var(--hair);padding-bottom:2px;transition:.35s}
 .proj:hover .more{border-color:var(--clay);color:var(--clay)}
 
+/* ---------- markalar ---------- */
+.brands{padding-bottom:clamp(60px,8vw,110px)}
+.blist{border-top:1px solid var(--hair)}
+.brow{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:20px;
+  padding:clamp(14px,1.8vw,22px) 0;border-bottom:1px solid var(--hair)}
+.brow b{font-family:var(--disp);font-weight:500;font-size:clamp(22px,3vw,38px);letter-spacing:-.03em;
+  font-variation-settings:'opsz' 120,'SOFT' 60,'WONK' 1}
+.brow span{font-family:var(--disp);font-style:italic;font-size:15px;color:var(--soft);text-align:right}
+@media(max-width:560px){.brow{grid-template-columns:1fr}.brow span{text-align:left;margin-top:2px}}
+
 /* ---------- approach ---------- */
 .appr{background:var(--paper2);padding-top:clamp(70px,9vw,120px);padding-bottom:clamp(70px,9vw,120px);
   margin-bottom:clamp(60px,8vw,110px)}
@@ -152,7 +162,7 @@ footer{padding-bottom:clamp(50px,7vw,80px)}
 
 <div class="top pad">
   <a href="#top">Ali Rıza Birdal</a>
-  <nav><a href="#isler">İşler</a><a href="#yaklasim">Yaklaşım</a><a href="#iletisim">İletişim</a></nav>
+  <nav><a href="#isler">İşler</a><a href="#markalar">Markalar</a><a href="#yaklasim">Yaklaşım</a><a href="#iletisim">İletişim</a></nav>
 </div>
 
 <header class="hero pad" id="top">
@@ -177,6 +187,20 @@ footer{padding-bottom:clamp(50px,7vw,80px)}
   <section id="isler" class="work pad">
     <p class="lab">Seçilmiş işler</p>
     <div id="grid"></div>
+  </section>
+
+  <section id="markalar" class="brands pad">
+    <p class="lab">Birlikte çalıştığım markalar</p>
+    <div class="blist">
+      <div class="brow rv"><b>CTR Chicken</b><span>Sosyal medya, kampanya ve şube görselleri</span></div>
+      <div class="brow rv"><b>Saucella</b><span>Sosyal medya, marka konumlandırma ve kampanya</span></div>
+      <div class="brow rv"><b>Charmy Food</b><span>Sosyal medya ve yapay zekâ destekli içerik</span></div>
+      <div class="brow rv"><b>Makfry</b><span>Sosyal medya, web tasarımı, katalog ve ürün iletişimi</span></div>
+      <div class="brow rv"><b>Züber</b><span>Ürün gamı 3D modelleme ve görselleştirme</span></div>
+      <div class="brow rv"><b>CarewithKi</b><span>Ürün gamı 3D modelleme, görselleştirme ve animasyon</span></div>
+      <div class="brow rv"><b>Gerilim Enerji</b><span>Sosyal medya, 3D görselleştirme, katalog, afiş ve saha çekimi</span></div>
+      <div class="brow rv"><b>Dr. Fatma Yeşilyurt</b><span>Marka kimliği, sosyal medya ve içerik yönetimi</span></div>
+    </div>
   </section>
 
   <section id="yaklasim" class="appr pad">
