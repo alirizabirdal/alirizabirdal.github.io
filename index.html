@@ -126,6 +126,10 @@ a{color:inherit;text-decoration:none}
 .blk ul{list-style:none;max-width:58ch}
 .blk li{position:relative;padding-left:26px;margin-bottom:12px;font-size:16.5px;color:#3E3730}
 .blk li::before{content:"";position:absolute;left:0;top:12px;width:12px;height:1px;background:var(--clay)}
+.dis{margin-top:30px}
+.dis a{font-family:var(--disp);font-style:italic;font-size:17px;color:var(--clay);
+  border-bottom:1px solid var(--hair);padding-bottom:3px;transition:.3s}
+.dis a:hover{border-color:var(--clay)}
 .galeri{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:36px}
 .galeri figure{margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--paper2);border-radius:2px}
 .galeri img{height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.9,.25,1)}
@@ -284,6 +288,32 @@ const ISLER=[
 
  /* ---------------- KİŞİSEL / ERKEN İŞLER ---------------- */
 
+ {kat:"oyun", img:"img/oyun/kapak.jpg",
+  imgs:["img/oyun/01.jpg","img/oyun/02.jpg","img/oyun/03.jpg","img/oyun/04.jpg"],
+  link:"https://www.behance.net/gallery/239235315/Portfolio-For-3D-Advertisement-Games",
+  tur:"Oyun ve reklam için 3D", yil:"2023 – 2025",
+  baslik:"Motora hazır asset üretimi",
+  ozet:"Oyun içinde kullanılabilir, poligon bütçesine oturan ve doğru okunan 3D varlıklar üretmek.",
+  vaka:{brief:"Oyun asseti güzel render alınan model değildir; poligon bütçesine sığmak, doğru unwrap edilmek ve motorda beklendiği gibi görünmek zorundadır.",
+   surec:["Çevre ve mobilya varlıklarını düşük poligonla modelleyip topolojiyi temiz tuttum.",
+          "Base color ve normal map'leri yüksek poligonlu modelden bake ederek detayı dokuya taşıdım.",
+          "Karakter modelini rigleyip animasyona hazır hale getirdim.",
+          "Reklam tarafı için aynı disiplinle ürün modelleri (armatür, evye, kozmetik) ürettim."],
+   sonuc:"Poligon sayısı, dokusu ve rigi belgelenmiş, doğrudan projeye alınabilir bir varlık seti."}},
+
+ {kat:"grafik", img:"img/grafik/kapak.jpg",
+  imgs:["img/grafik/01.jpg","img/grafik/02.jpg","img/grafik/03.jpg","img/grafik/04.jpg","img/grafik/05.jpg"],
+  link:"https://www.behance.net/gallery/239132831/2025-Grafik-Fotograf-ve-Tasarm-Portfolyosu",
+  tur:"Grafik tasarım ve fotoğraf · Gerilim Enerji", yil:"2024 – 2025",
+  baslik:"Katalogdan billboard'a, aynı ses",
+  ozet:"Aynı ürünü katalogda, afişte ve yol kenarında birbirini bozmadan anlatmak.",
+  vaka:{brief:"Ürün bilgisi kataloğa girdiğinde ayrıntı, billboard'a çıktığında tek cümle olmak zorundaydı. Aynı marka, çok farklı okuma mesafeleri.",
+   surec:["Ürün kataloglarını teknik veriyi kaybetmeden okunur bir mizanpaja oturttum.",
+          "Fuar, totem ve billboard için mesafeye göre ayrı tipografi ve kompozisyon kurdum.",
+          "Saha ve drone çekimleriyle kendi görsel kaynağımı ürettim — stok görsele bağlı kalmadım.",
+          "Bayi sistemi ve kampanya materyallerini aynı tasarım diline bağladım."],
+   sonuc:"Katalog, afiş, açıkhava ve dijital içerik tek bir marka dilinden konuşur hale geldi."}},
+
  {kat:"motion", yt:"ZmZF5aLtrO4", tur:"Etkileşimli VR deneyimi", yil:"2024",
   baslik:"Su Kirliliği Simülasyonu",
   ozet:"Soyut bir çevre sorununu anlatmak yerine izleyiciye yaşatmak.",
@@ -343,6 +373,7 @@ function ac(i){
     <div class="blk"><h4>Durum</h4><p>${i.vaka.brief}</p></div>
     <div class="blk"><h4>Ne yaptım</h4><ul>${i.vaka.surec.map(s=>`<li>${s}</li>`).join("")}</ul></div>
     <div class="blk"><h4>Sonuç</h4><p>${i.vaka.sonuc}</p></div>
+    ${i.link?`<p class="dis"><a href="${i.link}" target="_blank" rel="noopener">Projenin tamamını Behance'de gör →</a></p>`:""}
     ${i.imgs&&i.imgs.length>1?`<div class="galeri">${i.imgs.map(g=>`<figure><img loading="lazy" src="${g}" alt="${i.baslik}" onerror="this.parentNode.remove()"></figure>`).join("")}</div>`:""}`;
   ov.classList.add("on");ov.setAttribute("aria-hidden","false");
   document.body.style.overflow="hidden";sheet.scrollTop=0;
